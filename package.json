@@ -1,0 +1,25 @@
+{
+  "name": "barstool-fullstack",
+  "version": "1.0.0",
+  "description": "Box score - full stack application",
+  "main": "webpack.config.dev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinnyA3/fullstack-challenge.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "mongo",
+    "express"
+  ],
+  "author": "vinnyA3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinnyA3/fullstack-challenge/issues"
+  },
+  "homepage": "https://github.com/vinnyA3/fullstack-challenge#readme"
+}
