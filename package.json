@@ -4,7 +4,9 @@
   "description": "Box score - full stack application",
   "main": "webpack.config.dev.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client:dev": "webpack-dev-server --config webpack.config.dev.js",
+    "server:dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-watch": "^5.0.1",
@@ -43,6 +46,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   }
 }
