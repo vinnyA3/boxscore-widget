@@ -15,9 +15,7 @@ app.use(cors());
 // ROUTES
 app.use('/api', require('./routes'));
 
-app.get('*', (req, res) =>
-  res.status(404).send({ message: 'Page not found.' })
-);
+app.get('*', (_, res) => res.status(404).send({ message: 'Page not found.' }));
 
 dbConnect(`mongodb://${db.host}:${db.port}`, db.name)
   .then(() =>
