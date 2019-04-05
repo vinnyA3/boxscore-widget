@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:dev": "webpack-dev-server --config webpack.config.dev.js",
-    "server:dev": "NODE_PATH=./server nodemon server/index.js"
+    "server:dev": "NODE_ENV=dev NODE_PATH=./server nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "mongodb": "^3.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "request": "^2.88.0",
