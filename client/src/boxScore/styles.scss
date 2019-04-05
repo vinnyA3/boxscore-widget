@@ -1,0 +1,13 @@
+$font-color: #48494A;
+$primary-gray: #F9F9FB;
+$secondary-gray: #DDDDDD;
+
+.boxscore {
+  display: inline-flex;
+  color: $font-color;
+  font-size: .91rem;
+  border: 1px solid $secondary-gray;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
