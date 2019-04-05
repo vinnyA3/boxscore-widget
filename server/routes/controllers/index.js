@@ -15,20 +15,20 @@ module.exports = {
         if (!dbData) {
           const data = await rp(sportRequest);
           db.collection(req.sport).insertOne(data); // dont' await the data ...
-          res.status(200).send(data);
-        } else {
-          const now = Date.now();
-          const timestamp = dbData._id.getTimestamp();
-
-          if (Math.floor((now - timestamp) / 1000) < 15) {
-            res.status(200).send(dbData);
-          } else {
-            const data = await rp(sportRequest);
-            await db.collection(req.sport).drop();
-            db.collection(req.sport).insertOne(data); // dont' await the data ...
-            res.status(200).send(data);
-          }
+          return res.status(200).send(data);
         }
+
+        const now = Date.now();
+        const timestamp = dbData._id.getTimestamp();
+
+        if (Math.floor((now - timestamp) / 1000) < 15) {
+          return res.status(200).send(dbData);
+        }
+
+        const data = await rp(sportRequest);
+        await db.collection(req.sport).drop();
+        db.collection(req.sport).insertOne(data); // dont' await the data ...
+        res.status(200).send(data);
       } catch (err) {
         res.status(500).send({ err });
       }
