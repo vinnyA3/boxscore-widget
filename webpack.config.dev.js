@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const src_path = path.join(__dirname, './client/src');
-const public_path = path.join(__dirname, './client/public');
+const src_path = path.resolve(__dirname, './client/src');
+const public_path = path.resolve(__dirname, './client/public');
 
 module.exports = {
   entry: [src_path + '/index.js'],
@@ -17,6 +17,7 @@ module.exports = {
       {
         test: /\.jsx?/,
         use: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -43,11 +44,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
+    modules: [src_path, 'node_modules'],
   },
   devServer: {
     port: process.env.PORT || 8000,
     compress: true,
     contentBase: path.join(__dirname, './client/public'),
     historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
   },
 };
