@@ -13,5 +13,5 @@ module.exports = {
         }
       })
     ),
-  dbGet: () => _db,
+  getDb: () => _db,
 };
