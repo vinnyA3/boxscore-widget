@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import { genLinescoreHeaderItems, genLinescoreItems } from '../../helpers';
-import { boxscoreTable, linescore__header } from './styles';
+import {
+  boxscoreTable,
+  linescore__header,
+} from './styles';
 
 const BoxscoreTable = ({ sportData }) => (
   <table className={boxscoreTable}>
