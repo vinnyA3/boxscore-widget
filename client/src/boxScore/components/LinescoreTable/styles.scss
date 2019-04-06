@@ -7,8 +7,8 @@ $secondary-gray: #DDDDDD;
   width: 7.2em;
 
   thead > tr {
-    padding: 5em;
-    height: 2.376em;
+    height: 2.5em;
+    background-color: $primary-gray;
   }
 
   td { // lets assume boxscoreTable will always be a table 
