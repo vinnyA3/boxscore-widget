@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
+import { Tabs, TabPane } from 'components/tabs';
 import BoxScore from 'boxScore';
 import getData from 'utils/api';
 import './sass/main';
@@ -14,20 +15,12 @@ const App = () => {
     );
   }, [currentLeague]);
 
+  // <li title="nba" onClick={() => setLeague('nba')} />
   return sportData ? (
     <>
       <nav>
-        <aside>
-          <h1>Barstool</h1>
-        </aside>
-        <ul>
-          <li>
-            <span onClick={() => setLeague('mlb')}>MLB</span>
-          </li>
-          <li>
-            <span onClick={() => setLeague('nba')}>NBA</span>
-          </li>
-        </ul>
+        <li onClick={() => setLeague('mlb')}>MLB</li>
+        <li onClick={() => setLeague('nba')}>NBA</li>
       </nav>
       <BoxScore sportData={sportData} />
     </>
