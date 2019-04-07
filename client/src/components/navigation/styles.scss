@@ -1,0 +1,20 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.2em;
+
+  &__brand {
+    margin-right: auto; //flush list
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    * {
+      display: inline-block;
+    }
+  }
+}
