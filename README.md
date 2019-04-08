@@ -8,6 +8,19 @@
 
 ---
 
+### Getting started 
+First, make sure that **node** and **mongodb** are both installed on your local
+machine.  Next, start the mongodb daemon.
+
+To run the application locally, you can:
+* Clone the repo: `git clone git@github.com:vinnyA3/fullstack-challenge.git`
+* Install all necessary dependencies: `npm install`
+* Start both the client and server dev. processes: `npm run dev`
+
+Finally, navigate to [http://localhost:8000](http://localhost:8000)
+
+---
+
 ### Deliverables
 Links to both the NodeJS Server repo, and the React App repo.
 * The NodeJS Server should:
