@@ -15,17 +15,17 @@ const gameProgress = ({ event_information }, league) => {
   }
 };
 
-const TotalScore = ({ sportData }) => {
+const TotalScore = ({ leagueData }) => {
   return (
     <div className={totalScore}>
       <section className={teamData}>
-        <h2>{sportData.home_team.last_name}</h2>
+        <h2>{leagueData.home_team.last_name}</h2>
       </section>
       <section className={progress}>
-        <h3>{gameProgress(sportData, sportData.league)}</h3>
+        <h3>{gameProgress(leagueData, leagueData.league)}</h3>
       </section>
       <section className={teamData}>
-        <h2>{sportData.away_team.last_name}</h2>
+        <h2>{leagueData.away_team.last_name}</h2>
       </section>
     </div>
   );

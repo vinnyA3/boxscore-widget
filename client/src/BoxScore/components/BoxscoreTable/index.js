@@ -2,16 +2,16 @@ import React, { Fragment } from 'react';
 import { genLinescoreHeaderItems, genLinescoreItems } from '../../helpers';
 import { boxscoreTable, linescore__header } from './styles';
 
-const BoxscoreTable = ({ sportData }) => (
+const BoxscoreTable = ({ leagueData }) => (
   <table className={boxscoreTable}>
     <thead className={linescore__header}>
-      <tr>{genLinescoreHeaderItems(sportData)}</tr>
+      <tr>{genLinescoreHeaderItems(leagueData)}</tr>
     </thead>
     <tbody>
-      <tr>{genLinescoreItems(sportData, 'away')}</tr>
+      <tr>{genLinescoreItems(leagueData, 'away')}</tr>
     </tbody>
     <tbody>
-      <tr>{genLinescoreItems(sportData, 'home')}</tr>
+      <tr>{genLinescoreItems(leagueData, 'home')}</tr>
     </tbody>
   </table>
 );

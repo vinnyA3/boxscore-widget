@@ -18,30 +18,30 @@ const getNumOfCells = league =>
     NBA: arr => (arr.length < 4 ? 4 : arr.length),
   }[league]);
 
-export const genLinescoreHeaderItems = sportData => {
+export const genLinescoreHeaderItems = leagueData => {
   const linescoreItems = [];
-  const numCells = getNumOfCells(sportData.league)(
-    sportData.away_period_scores
+  const numCells = getNumOfCells(leagueData.league)(
+    leagueData.away_period_scores
   );
 
   for (let i = 1; i <= numCells; i++) {
     linescoreItems.push(<td key={i}>{i}</td>);
   }
 
-  if (sportData.league === 'MLB') {
+  if (leagueData.league === 'MLB') {
     genMLBData(['R', 'H', 'E'], linescoreItems);
   }
 
   return linescoreItems;
 };
 
-export const genLinescoreItems = (sportData, team) => {
+export const genLinescoreItems = (leagueData, team) => {
   const linescoreItems = [];
-  const numCells = getNumOfCells(sportData.league)(
-    sportData.away_period_scores
+  const numCells = getNumOfCells(leagueData.league)(
+    leagueData.away_period_scores
   );
 
-  const teamScores = sportData[`${team}_period_scores`];
+  const teamScores = leagueData[`${team}_period_scores`];
   const totalTeamScore = calcTotalScore(teamScores);
 
   for (let i = 0; i < numCells; i++) {
@@ -50,12 +50,12 @@ export const genLinescoreItems = (sportData, team) => {
     );
   }
 
-  if (sportData.league === 'MLB') {
+  if (leagueData.league === 'MLB') {
     genMLBData(
       [
         totalTeamScore,
-        sportData[`${team}_batter_totals`].hits,
-        sportData[`${team}_errors`],
+        leagueData[`${team}_batter_totals`].hits,
+        leagueData[`${team}_errors`],
       ],
       linescoreItems
     );

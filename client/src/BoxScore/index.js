@@ -5,14 +5,14 @@ import BoxscoreTable from './components/BoxscoreTable';
 import LinescoreTable from './components/LinescoreTable';
 import TotalScore from './components/TotalScore';
 
-const BoxScore = ({ sportData }) => (
+const BoxScore = ({ leagueData }) => (
   <>
     <div className={boxscore}>
       <div className={boxscore__responsive}>
-        <LinescoreTable sportData={sportData} />
-        <BoxscoreTable sportData={sportData} />
+        <LinescoreTable leagueData={leagueData} />
+        <BoxscoreTable leagueData={leagueData} />
       </div>
-      <TotalScore sportData={sportData} />
+      <TotalScore leagueData={leagueData} />
     </div>
   </>
 );

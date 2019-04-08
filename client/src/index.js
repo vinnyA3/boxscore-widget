@@ -8,17 +8,17 @@ import getData from 'utils/api';
 import './sass/main';
 
 const App = () => {
-  const [sportData, setSportData] = useState(null);
+  const [leagueData, setLeagueData] = useState(null);
   const [currentLeague, setLeague] = useState('mlb');
   const lowerAndSetLeague = compose2(setLeague, toLower);
 
   useEffect(() => {
     getData(`/api/league/${currentLeague}`)
-      .then(({ data }) => setSportData(data))
+      .then(({ data }) => setLeagueData(data))
       .catch(e => console.error(e));
   }, [currentLeague]);
 
-  return sportData ? (
+  return leagueData ? (
     <div>
       <Nav style={{ paddingLeft: '2.73em' }}>
         <NavBrand>
@@ -32,7 +32,7 @@ const App = () => {
       <main
         style={{ padding: '1.33em', display: 'flex', justifyContent: 'center' }}
       >
-        <BoxScore sportData={sportData} />
+        <BoxScore leagueData={leagueData} />
       </main>
     </div>
   ) : (
