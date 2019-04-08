@@ -7,10 +7,12 @@
 
 .tab {
   cursor: pointer;
+  font-weight: bold;
+  font-size: .85rem;
 
   &Inline {
     &:not(:last-child) {
-      margin-right: .8em;
+      margin-right: .8rem;
     }
   }
 }
@@ -23,7 +25,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-bottom: 1.28em;
+    padding-bottom: 1.28rem;
     border-bottom: 2px solid $secondary-red;
   }
 }
