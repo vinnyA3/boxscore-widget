@@ -5,5 +5,5 @@
   <img height="141" width="481" src="https://github.com/vinnyA3/fullstack-challenge/blob/master/screenshots/fullstack.png?raw=true">
 </p>
 
-[Here is the original documentation](https://chumley.barstoolsports.com/wp-content/uploads/2018/12/21/boxscore.png)
+[Here is the original documentation](https://github.com/BarstoolSports/fullstack-challenge)
 
