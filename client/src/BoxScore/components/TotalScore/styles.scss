@@ -1,0 +1,34 @@
+.totalScore {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-flow: column wrap;
+
+  @include break(md) {
+    flex-flow: row nowrap;
+  };
+}
+
+.teamData {
+  text-align: center;
+  flex: 1;
+  font-size: .833rem;
+  padding: 1.25em 1em;
+
+  @include break(md) {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+  padding: .8rem;
+  background-color: $primary-gray;
+
+  @include break(md) {
+    padding: 0 .8rem;
+  }
+}

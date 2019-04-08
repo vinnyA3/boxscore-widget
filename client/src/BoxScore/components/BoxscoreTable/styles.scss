@@ -1,0 +1,16 @@
+.boxscoreTable {
+  border-spacing: 0;
+
+  td { // lets assume boxscoreTable will always be a table 
+    padding: .58rem .82rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid $secondary-gray;
+    }
+  }
+}
+
+.linescore__header {
+  background-color: $primary-gray; 
+  border-bottom: 1px solid $secondary-gray;
+}

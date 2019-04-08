@@ -1,0 +1,22 @@
+.boxscore {
+  background-color: #fff;
+  color: $font-color;
+  font-size: .91rem;
+  border-radius: .91rem;
+  overflow: hidden;
+
+  td {
+    border-bottom: 1px solid $secondary-gray;
+  }
+
+  &__responsive {
+    display: flex;
+    overflow: auto;
+  }
+
+  @include break(md) {
+    display: inline-block;
+  }
+}
+
+
