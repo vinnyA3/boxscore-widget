@@ -1,4 +1,4 @@
-# The Boxscore Challenge
+# Boxscore Widget
 > The Boxscore is the goto widget on any sports site to get quick information about a game.  ESPN, Fox Sports, theScore, and many others have solutions.
 
 **Prototype**:
@@ -20,7 +20,12 @@ Links to both the NodeJS Server repo, and the React App repo.
 
 ---
 
-### Journal
+### Possible improvements and optimizations
+Here are some improvements that could be made:
+* A testing suite, such as Jest, could be used 
+* A production build of webpack could be generated (compressed and uglified)
+* Typechecking could be used ie. *React PropTypes*
+* Another database could be used for caching data (ie. *Redis*)
 
 [Here is the original documentation](https://github.com/BarstoolSports/fullstack-challenge)
 
