@@ -1,20 +1,20 @@
 const { getDb } = require('db/connection');
 const { ObjectID } = require('mongodb');
-const { sportRequestBuilder } = require('utilities');
+const { leagueRequestBuilder } = require('utilities');
 const rp = require('request-promise');
 
 module.exports = {
-  getSportData: async (req, res) => {
-    const sportRequest = sportRequestBuilder(req.sport); // check valid input & build req
+  getLeagueData: async (req, res) => {
+    const leagueRequest = leagueRequestBuilder(req.league); // check valid input & build req
 
-    if (sportRequest) {
+    if (leagueRequest) {
       try {
         const db = getDb();
-        const dbData = await db.collection(req.sport).findOne({});
+        const dbData = await db.collection(req.league).findOne({});
 
         if (!dbData) {
-          const data = await rp(sportRequest);
-          db.collection(req.sport).insertOne(data); // don't await insertion...
+          const data = await rp(leagueRequest);
+          db.collection(req.leage).insertOne(data); // don't await insertion...
           return res.status(200).send(data);
         }
 
@@ -24,9 +24,9 @@ module.exports = {
           return res.status(200).send(dbData);
         }
 
-        const data = await rp(sportRequest);
-        await db.collection(req.sport).drop();
-        db.collection(req.sport).insertOne(data); // don't await insertion...
+        const data = await rp(leagueRequest);
+        await db.collection(req.league).drop();
+        db.collection(req.league).insertOne(data); // don't await insertion...
         res.status(200).send(data);
       } catch (err) {
         res.status(500).send({ err });

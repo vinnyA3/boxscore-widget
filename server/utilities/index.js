@@ -8,7 +8,7 @@ const requestBuilder = endpoint => ({
   json: true, // Automatically parses the JSON string in the response
 });
 
-const sportRequestBuilder = type =>
+const leagueRequestBuilder = type =>
   ({
     mlb: requestBuilder('eed38457-db28-4658-ae4f-4d4d38e9e212'),
     nba: requestBuilder('6c974274-4bfc-4af8-a9c4-8b926637ba74'),
@@ -16,5 +16,5 @@ const sportRequestBuilder = type =>
 
 module.exports = {
   requestBuilder,
-  sportRequestBuilder,
+  leagueRequestBuilder,
 };

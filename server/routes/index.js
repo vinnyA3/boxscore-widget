@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const { getSportData } = require('./controllers');
+const { getLeagueData } = require('./controllers');
 const router = Router();
 
 router.param(
   'name',
-  (req, res, next, name) => ((req.sport = name), next()) // comma eval (L, return R)
+  (req, res, next, name) => ((req.league = name), next()) // comma eval (L, return R)
 );
 
-router.route('/sport/:name').get(getSportData);
+router.route('/league/:name').get(getLeagueData);
 
 module.exports = router;
