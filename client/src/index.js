@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import { Tabs, TabPane } from 'components/tabs';
-import BoxScore from 'boxScore';
+import { Nav, NavBrand } from 'components/Navigation';
+import { Tabs } from 'components/tabs';
+import BoxScore from 'BoxScore';
 import getData from 'utils/api';
 import './sass/main';
 
@@ -15,15 +16,23 @@ const App = () => {
     );
   }, [currentLeague]);
 
-  // <li title="nba" onClick={() => setLeague('nba')} />
   return sportData ? (
-    <>
-      <nav>
-        <li onClick={() => setLeague('mlb')}>MLB</li>
-        <li onClick={() => setLeague('nba')}>NBA</li>
-      </nav>
-      <BoxScore sportData={sportData} />
-    </>
+    <div>
+      <Nav style={{ paddingLeft: '2.73em' }}>
+        <NavBrand>
+          <h1>Barstool</h1>
+        </NavBrand>
+        <Tabs inline={true} run={setLeague}>
+          <li title="mlb" />
+          <li title="nba" />
+        </Tabs>
+      </Nav>
+      <main
+        style={{ padding: '1.33em', display: 'flex', justifyContent: 'center' }}
+      >
+        <BoxScore sportData={sportData} />
+      </main>
+    </div>
   ) : (
     ''
   );
