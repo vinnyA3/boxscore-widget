@@ -40,5 +40,3 @@ Here are some improvements that could be made:
 * Typechecking could be used ie. *React PropTypes*
 * Another database could be used for caching data (ie. *Redis*)
 
-[Here is the original documentation](https://github.com/BarstoolSports/fullstack-challenge)
-
