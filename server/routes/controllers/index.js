@@ -14,7 +14,7 @@ module.exports = {
 
         if (!dbData) {
           const data = await rp(leagueRequest);
-          db.collection(req.leage).insertOne(data); // don't await insertion...
+          db.collection(req.league).insertOne(data); // don't await insertion...
           return res.status(200).send(data);
         }
 
